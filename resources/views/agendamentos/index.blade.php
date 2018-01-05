@@ -18,6 +18,26 @@
             <th>Ações</th>
         </tr>
     </thead>
+    <tbody>            
+    @foreach($agendamentos as $agendamentos)
+        <tr>
+            <td>{{$agendamentos->id}}</td>
+            <td>{{$agendamentos->paciente}}</td>
+            <td>{{$agendamentos->cpf}}</td>
+            <td>{{$agendamentos->medico}}</td>
+            <td>{{$agendamentos->dataconsulta}}</td>
+            <td>{{$agendamentos->horario}}</td>
+            <td>{{$agendamentos->status}}</td>
+            <td>
+                <a href="{{route('agendamentos.edit', $agendamentos->id)}}" class="btn btn-warning">Editar</a>
+                          
+            </td> 
+            <td>
+                <a href="{{route('agendamentos.remove', $agendamentos->id)}}" class="btn btn-danger">Deletar</a>   
+            </td>                               
+        </tr>                         
+    @endforeach                                
+</tbody>
    
 </table>
 </div>

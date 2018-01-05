@@ -24,6 +24,12 @@ Route::resource('agendamentos', 'AgendamentosController');
 Route::resource('pacientes', 'PacientesController');
 Route::resource('medicos', 'ApiMedicosController');
 
+//Rotas remover
+Route::get('/agendamentos/remove/', 'AgendamentosController@remover')->name('agendamentos.remove');
+Route::get('/doctors/remove/', 'DoctorsController@remover')->name('doctors.remove');
+Route::get('/funcionarios/remove/', 'FuncionariosController@remover')->name('funcionarios.remove');
+Route::get('/pacientes/remove/', 'PacientesController@remover')->name('pacientes.remove');
+
 //Rotas Datatables
 Route::get('api/agendamentos', function() {
 	return datatables()->eloquent(App\Agendamentos::query())->toJson();

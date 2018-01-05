@@ -114,13 +114,7 @@
                     {data: 'medico'},
                     {data: 'dataconsulta'},
                     {data: 'horario'},
-                    {data: 'status'},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos.edit')}}' class='btn btn-warning' title='Editar'>Editar</a></tr>",
-                    searchable:false,
-                    sortable:false},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos.destroy')}}' class='btn btn-danger' title='Editar'>Deletar</a></tr>",
-                    searchable:false,
-                    sortable:false},                
+                    {data: 'status'},            
                 ]
             });
         });
@@ -158,12 +152,6 @@
                     {data: 'celular'},
                     {data: 'contratacao'},
                     {data: 'datainicio'},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-warning' title='Editar'>Editar</a></tr>",
-                    searchable:false,
-                    sortable:false},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-danger' title='Editar'>Deletar</a></tr>",
-                    searchable:false,
-                    sortable:false}, 
                 ]
             });
         });
@@ -203,12 +191,6 @@
                     {data: 'celular'},
                     {data: 'cargo'},
                     {data: 'dataadmissao'},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-warning' title='Editar'>Editar</a></tr>",
-                    searchable:false,
-                    sortable:false},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-danger' title='Editar'>Deletar</a></tr>",
-                    searchable:false,
-                    sortable:false}, 
                 ]
             });
         });
@@ -247,12 +229,6 @@
                     {data: 'celular'},
                     {data: 'convenio'},
                     {data: 'numeroconvenio'},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-warning' title='Editar'>Editar</a></tr>",
-                    searchable:false,
-                    sortable:false},
-                    {defaultContent: "<tr><a type='submit' href='{{url ('agendamentos/edit')}}' class='btn btn-danger' title='Editar'>Deletar</a></tr>",
-                    searchable:false,
-                    sortable:false}, 
                 ]
             });
         });

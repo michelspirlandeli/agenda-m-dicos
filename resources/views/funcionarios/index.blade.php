@@ -20,7 +20,28 @@
             <th>Ações</th>
             <th>Ações</th>
         </tr>
-    </thead>   
+    </thead>
+    <tbody>            
+    @foreach($funcionarios as $funcionarios)
+        <tr>
+            <td>{{$funcionarios->id}}</td>
+            <td>{{$funcionarios->nome}}</td>
+            <td>{{$funcionarios->cpf}}</td>
+            <td>{{$funcionarios->rua}}</td>
+            <td>{{$funcionarios->numero}}</td>
+            <td>{{$funcionarios->bairroEndereco}}</td>
+            <td>{{$funcionarios->telefone}}</td>
+            <td>{{$funcionarios->celular}}</td>
+            <td>{{$funcionarios->cargo}}</td>
+            <td>{{$funcionarios->dataadmissao}}</td>
+            <td>
+                <a href="{{route('funcionarios.edit', $funcionarios->id)}}" class="btn btn-warning">Editar</a>                      
+            </td> 
+            <td>
+                <a href="#" class="btn btn-danger">Deletar</a>   
+            </td>                               
+        </tr>                         
+    @endforeach        
 </table>
 </div>
 @endsection

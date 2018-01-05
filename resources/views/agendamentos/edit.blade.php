@@ -38,11 +38,7 @@
             <div class="col-md-8">
                 <div class="form-group">
                     <label for="medico">Médico</label>
-                    <select name="medico" id="uf" class="form-control" required>
-                        <option>Selecione</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                    </select>
+                    <input type="text" class="form-control" placeholder="médico" required name="medico" value="{{$agendamentos->medico}}">
                 </div>
             </div>
             <div class="col-md-2">
@@ -64,10 +60,10 @@
                 <div class="form-group">
                     <label class="control-label" for="status">Status</label>
                     <select class="form-control" name="status" value="{{$agendamentos->status}}">
-                        <option {{($agendamentos->dataconsulta == 'confirmada' ? 'selected' : '')}}>Confirmada</option>
-                        <option {{($agendamentos->dataconsulta == 'não compareceu' ? 'selected' : '')}}>Não compareceu</option>
-                        <option {{($agendamentos->dataconsulta == 'desmarcada' ? 'selected' : '')}}>Desmarcada</option>
-                        <option {{($agendamentos->dataconsulta == 'remarcada' ? 'selected' : '')}}>Remarcada</option>
+                        <option {{($agendamentos->status == 'confirmada' ? 'selected' : '')}}>Confirmada</option>
+                        <option {{($agendamentos->status == 'não compareceu' ? 'selected' : '')}}>Não compareceu</option>
+                        <option {{($agendamentos->status == 'desmarcada' ? 'selected' : '')}}>Desmarcada</option>
+                        <option {{($agendamentos->status == 'remarcada' ? 'selected' : '')}}>Remarcada</option>
                     </select>
                 </div>
             </div>

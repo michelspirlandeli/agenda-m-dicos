@@ -36,7 +36,7 @@
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="datanasc">Data Nascimento</label>
-                    <input type="text" class="form-control" placeholder="Data Nascimento" required name="datanasc">
+                    <input type="date" class="form-control" placeholder="Data Nascimento" required name="datanasc">
                 </div>
             </div>
 
@@ -220,7 +220,7 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="datainicio">Data Início</label>
-                    <input type="text" class="form-control" placeholder="Data Início" required name="datainicio">
+                    <input type="date" class="form-control" placeholder="Data Início" required name="datainicio">
                 </div>
             </div>
         </div>
@@ -260,7 +260,7 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="datanascpai">Data Nasc.</label>
-                    <input type="text" class="form-control" placeholder="Data Nasc." required name="datanascpai">
+                    <input type="date" class="form-control" placeholder="Data Nasc." required name="datanascpai">
                 </div>
             </div>
         </div>
@@ -275,7 +275,7 @@
             <div class="col-md-2">
                 <div class="form-group">
                     <label for="datanascmae">Data Nasc.</label>
-                    <input type="text" class="form-control" placeholder="Data Nasc." required name="datanascmae">
+                    <input type="date" class="form-control" placeholder="Data Nasc." required name="datanascmae">
                 </div>
             </div>
         </div>

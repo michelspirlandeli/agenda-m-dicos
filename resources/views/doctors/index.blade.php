@@ -19,7 +19,26 @@
             <th>Ações</th>
         </tr>
     </thead>
-   
+   <tbody>            
+    @foreach($doctors as $doctors)
+        <tr>
+            <td>{{$doctors->id}}</td>
+            <td>{{$doctors->nome}}</td>
+            <td>{{$doctors->especialidades}}</td>
+            <td>{{$doctors->crm}}</td>
+            <td>{{$doctors->telefone}}</td>
+            <td>{{$doctors->celular}}</td>
+            <td>{{$doctors->contratacao}}</td>
+            <td>{{$doctors->datainicio}}</td>
+            <td>
+                <a href="{{route('doctors.edit', $doctors->id)}}" class="btn btn-warning">Editar</a>
+                          
+            </td> 
+            <td>
+                <a href="#" class="btn btn-danger">Deletar</a>   
+            </td>                               
+        </tr>                         
+    @endforeach             
 </table>
 </div>
 

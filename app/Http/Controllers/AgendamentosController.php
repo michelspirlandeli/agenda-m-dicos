@@ -7,8 +7,6 @@ use App\Http\Requests;
 use App\Agendamentos;
 use Validator;
 
-
-
 class AgendamentosController extends Controller
 {
     protected function validarAgendamentos($request){
@@ -70,7 +68,7 @@ class AgendamentosController extends Controller
      */
     public function show($id)
     {
-        $agendamentos = Agendamentos ::find($id);
+        $agendamentos = Agendamentos::find($id);
         return view('agendamentos.show', compact('agendamentos'));
     }
 
@@ -82,7 +80,7 @@ class AgendamentosController extends Controller
      */
     public function edit($id)
     {
-        $agendamentos = Agendamentos ::find($id);
+        $agendamentos = Agendamentos::find($id);
         return view('agendamentos.edit', compact('agendamentos'));
     }
 
@@ -101,7 +99,7 @@ class AgendamentosController extends Controller
         return redirect()->back()->withErrors($validator->errors());
         }
 
-        $agendamentos = Agendamentos ::find($id);
+        $agendamentos = Agendamentos::find($id);
         $dados = $request->all();
         $agendamentos->update($dados);
         return redirect()->route('agendamentos.index');
@@ -118,4 +116,11 @@ class AgendamentosController extends Controller
         Agendamentos::find($id)->delete();
         return redirect()->route('agendamentos.index');
     }
+
+    public function remover($id)
+    {
+        $agendamentos = Agendamentos::find($id);
+        return view('agendamentos.remove', compact('agendamentos'));
+    }
+
 }
