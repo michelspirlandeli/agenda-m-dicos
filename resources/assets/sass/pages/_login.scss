@@ -1,0 +1,14 @@
+.login {
+	background:transparent url('../images/bg-login.jpg')  no-repeat center center fixed;
+	background-size: cover;
+
+	.panel-default {
+		-webkit-box-shadow: 0px 0px 75px 0px rgba(0,0,0,0.37);
+		-moz-box-shadow: 0px 0px 75px 0px rgba(0,0,0,0.37);
+		box-shadow: 0px 0px 75px 0px rgba(0,0,0,0.37);
+	}
+
+	.help-block {
+		font-size: 13px;
+	}
+}

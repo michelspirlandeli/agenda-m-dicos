@@ -115,6 +115,7 @@ class AgendamentosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Agendamentos::find($id)->delete();
+        return redirect()->route('agendamentos.index');
     }
 }

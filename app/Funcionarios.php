@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Funcionarios extends Model
 {
-      protected $fillable = [
+    protected $fillable = [
     	"nome", "telefone", "celular", "email", "rua", "numero", "bairroEndereco", "complemento", "cep", "cidade", "uf", 
     	"sexo", "datanasc", "estadocivil", "rg", "rgemissor", "dataemissao", "uf", "cpf", "numerocnh", "expedicaocnh", 
     	"validadecnh", "categoriacnh", "numeroreservista", "carteiraprof", "expedicaocarteira", "titulo", "emissaotitulo", 

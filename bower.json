@@ -1,0 +1,21 @@
+{
+  "name": "agenda-medicos",
+  "description": "",
+  "main": "",
+  "authors": [
+    "michel spirlandeli <michelspirlandeli10@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/michelspirlandeli/agenda-medicos",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
