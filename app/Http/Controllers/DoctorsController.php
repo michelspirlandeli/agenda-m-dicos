@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Doctors;
+use Validator;
+
 
 class DoctorsController extends Controller
 {
@@ -51,7 +54,8 @@ class DoctorsController extends Controller
      */
     public function show($id)
     {
-        //
+        $doctors = Doctors::find($id);
+        return view('doctors.show', compact('doctors'));
     }
 
     /**
@@ -62,7 +66,8 @@ class DoctorsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $doctors = Doctors::find($id);
+        return view('doctors.edit', compact('doctors'));
     }
 
     /**
@@ -74,7 +79,16 @@ class DoctorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $this->validarDoctors($request);
+     
+        if($validator->fails()){
+        return redirect()->back()->withErrors($validator->errors());
+        }
+
+        $doctors = Doctors::find($id);
+        $dados = $request->all();
+        $doctors->update($dados);
+        return redirect()->route('doctors.index');
     }
 
     /**
@@ -85,6 +99,13 @@ class DoctorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Doctors::find($id)->delete();
+        return redirect()->route('doctors.index');
+    }
+
+    public function remover($id)
+    {
+        $doctors = Doctors::find($id);
+        return view('doctors.remove', compact('doctors'));
     }
 }

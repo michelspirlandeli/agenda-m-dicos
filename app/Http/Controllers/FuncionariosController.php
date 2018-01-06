@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use App\Funcionarios;
+use Validator;
 
 class FuncionariosController extends Controller
 {
@@ -50,7 +52,8 @@ class FuncionariosController extends Controller
      */
     public function show($id)
     {
-        //
+        $funcionarios = Funcionarios::find($id);
+        return view('funcionarios.show', compact('funcionarios'));
     }
 
     /**
@@ -61,7 +64,8 @@ class FuncionariosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $funcionarios = Funcionarios::find($id);
+        return view('funcionarios.edit', compact('funcionarios'));
     }
 
     /**
@@ -73,7 +77,16 @@ class FuncionariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $this->validarFuncionarios($request);
+     
+        if($validator->fails()){
+        return redirect()->back()->withErrors($validator->errors());
+        }
+
+        $funcionarios = Funcionarios::find($id);
+        $dados = $request->all();
+        $funcionarios->update($dados);
+        return redirect()->route('funcionarios.index');
     }
 
     /**
@@ -84,6 +97,13 @@ class FuncionariosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Funcionarios::find($id)->delete();
+        return redirect()->route('funcionarios.index');
+    }
+
+    public function remover($id)
+    {
+        $funcionarios = Funcionarios::find($id);
+        return view('funcionarios.remove', compact('funcionarios'));
     }
 }

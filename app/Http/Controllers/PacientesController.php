@@ -50,7 +50,8 @@ class PacientesController extends Controller
      */
     public function show($id)
     {
-        //
+        $pacientes = Pacientes::find($id);
+        return view('pacientes.show', compact('pacientes'));
     }
 
     /**
@@ -61,7 +62,8 @@ class PacientesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pacientes = Agendamentos::find($id);
+        return view('pacientes.edit', compact('pacientes'));
     }
 
     /**
@@ -73,7 +75,16 @@ class PacientesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = $this->validarPacientes($request);
+     
+        if($validator->fails()){
+        return redirect()->back()->withErrors($validator->errors());
+        }
+
+        $pacientes = Pacientes::find($id);
+        $dados = $request->all();
+        $pacientes->update($dados);
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -84,6 +95,13 @@ class PacientesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Pacientes::find($id)->delete();
+        return redirect()->route('pacientes.index');
+    }
+
+    public function remover($id)
+    {
+        $pacientes = Pacientes::find($id);
+        return view('pacientes.remove', compact('pacientes'));
     }
 }
