@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Pacientes extends Model
@@ -12,4 +11,8 @@ class Pacientes extends Model
     	"nomepai", "datanascpai", "nomemae", "datanascmae"
     ];
     protected $table = "pacientes";
+
+    public function agendamentos(){
+        return $this->belongsToMany('App\Agendamentos', 'Relacionamento_Paciente_Doctor_Agendamento');
+    }
 }

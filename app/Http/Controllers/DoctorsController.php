@@ -10,6 +10,17 @@ use Validator;
 
 class DoctorsController extends Controller
 {
+    protected function validarDoctors($request){
+        $validator = Validator::make($request->all(), [
+            "nome" => "required",
+            "especialidades"=> "required",
+            "crm" => "required",
+            "sexo" => "required",
+            "datanasc" => "required",
+            "estadocivil" => "required"
+        ]);
+        return $validator;
+    }
     /**
      * Display a listing of the resource.
      *

@@ -77,11 +77,11 @@ class FuncionariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = $this->validarFuncionarios($request);
+        /*$validator = $this->validarFuncionarios($request);
      
         if($validator->fails()){
         return redirect()->back()->withErrors($validator->errors());
-        }
+        }*/
 
         $funcionarios = Funcionarios::find($id);
         $dados = $request->all();

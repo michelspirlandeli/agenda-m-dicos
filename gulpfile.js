@@ -16,8 +16,6 @@ elixir(function(mix) {
 
 
 });
-
-
 //copy css
 elixir(function(mix) {
 
@@ -29,13 +27,11 @@ elixir(function(mix) {
     ], 'resources/assets/css/all.css');
 });
 
-
 elixir(function(mix) {
 	mix.styles([
       'all.css'
     ],'public/css/app.css');
 });
-
 
 elixir(function(mix) {
 

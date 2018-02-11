@@ -4,17 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title>Agenda Médica</title>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-       
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    
     </head>
-
     <body>
     <div id="app">
         <nav class="navbar navbar-inverse navbar-static-top">
@@ -41,6 +36,7 @@
                         <li><a href="{{ route('medicos.index') }}">Api Médicos</a></li>
                     </ul>
 
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -50,11 +46,9 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;"> <img src="/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%"> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a> 
-                            
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('/perfil') }}"
-                                           >
+                                        <a href="{{ url('/perfil') }}">
                                             Perfil
                                         </a>
                                     </li>
@@ -64,7 +58,6 @@
                                                      document.getElementById('logout-form').submit();">
                                             Sair
                                         </a>
-
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -78,7 +71,6 @@
         </nav>
        @yield('content')
     </div>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>

@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
 
 class Doctors extends Model
@@ -11,4 +10,9 @@ class Doctors extends Model
     	, "numeroEndereco", "bairroEndereco", "complemento", "cep", "cidade", "contratacao", "datainicio"
     ];
     protected $table = "doctors";
+
+    
+    public function agendamentos(){
+        return $this->belongsToMany('App\Agendamentos', 'doctors_id');
+    }
 }

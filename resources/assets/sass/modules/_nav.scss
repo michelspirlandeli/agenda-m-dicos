@@ -1,0 +1,188 @@
+.nav-holder {
+	background-color: nav-bg;
+
+	.main-nav {
+
+		margin-right: -15px;
+		margin-left: -15px;
+
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+
+				max-height: 40px;
+				overflow: hidden;
+				@include transition(all .3s ease-in-out);
+				border-bottom: 1px solid #ddd;
+				
+				a {
+					color: boulder-color;
+					font-size: 14px;
+				}
+
+				&:hover {
+
+					a {
+						color: white-color;
+						background-color: brand-color;
+					}
+				}
+
+				&.clicked {
+
+					a {
+						color: white-color;
+						background-color: brand-color;
+					}
+
+					max-height: 500px;
+				}
+
+				&.not-open {
+					max-height: 40px;
+
+					a {
+						color: boulder-color;
+						background-color: transparent;
+					}
+				}
+
+				.icon {
+
+					&:before {
+						font-size: 16px;
+					}
+				}
+
+				.submenu {
+
+					// height: 0px;
+					// overflow: hidden;
+					// opacity: 0;
+					padding: 0;
+					margin: 0;
+
+					li {
+
+						list-style-type: none;
+						border-bottom: 1px solid #666464;
+
+						&:last-child {
+							border: 0;
+						}
+
+						a {
+							padding: 10px 25px 10px 34px;
+							display: block;
+							text-decoration: none;
+							background-color: boulder-color;
+							color: white-color;
+
+							&:hover {
+								background-color: mine-shaft-color;
+							}
+						}
+
+						ul {
+
+							li {
+
+								a {
+									background-color: astral;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.header-nav {
+	background-color: boulder-color;
+	z-index: 1000;
+
+	.navbar-top-links {
+
+		>li {
+
+			display: inline-block;
+
+			>a {
+				color: white-color;
+
+				&:hover, &:focus {
+					background-color: brand-color;
+				}
+			}
+
+			.internet-status {
+				width: 13px;
+				height: 13px;
+				background-color: green;
+				display: inline-block;
+				border-radius: 10px;
+
+				&.offline {
+					background-color: red;
+				}
+
+				&.online {
+					background-color: green;
+				}
+			}
+		}
+	}
+
+
+	.app-name {
+		font-size: 18px;
+		margin: 0;
+		color: white-color;
+		padding: 10px 10px;
+	}
+}
+
+@media screen and(min-width: 991px) {
+
+	.nav-holder {
+		position: fixed;
+		top: 39px;
+		left: 0;
+	}
+
+	.header-nav {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+
+		.app-name {
+			margin: 10px 0;
+			padding: 0;
+		}
+	}
+
+}
+
+body.produto li.produto,
+body.vendas li.vendas,
+body.notas li.notas,
+body.financeiro li.financeiro,
+body.fornecedor li.fornecedor,
+body.funcionario li.funcionario,
+body.representantes li.representantes,
+body.clientes li.clientes {
+	max-height: 500px;
+
+	>a {
+		color: white-color;
+		background-color: brand-color;
+	}
+}
+
+
+
